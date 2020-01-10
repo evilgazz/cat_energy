@@ -214,12 +214,12 @@ p {
   height: 80px;
   background-color: #68b738;
 }
-.roadmap__section1 {
+.roadmap__section {
   position: relative;
   width: 236px;
   height: 228px;
 }
-.roadmap__section1 h1 {
+.roadmap__section h1 {
   position: absolute;
   color: #f2f2f2;
   font-size: 281px;
