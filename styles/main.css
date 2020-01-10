@@ -227,3 +227,76 @@ p {
   margin-left: 126px;
   z-index: -1;
 }
+
+.liveview {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding-bottom: 70px;
+  background-image: linear-gradient(180deg, white 170px, #f2f2f2 20%);
+}
+.liveview__left {
+  margin-right: 120px;
+}
+.liveview__left h1 {
+  color: #111111;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 60px;
+  margin-top: 30px;
+  margin-bottom: 160px;
+}
+.liveview__left p {
+  width: 430px;
+  color: #444444;
+  font-size: 16px;
+  font-weight: 0;
+  line-height: 24px;
+}
+.liveview__info {
+  display: flex;
+  margin-top: 70px;
+}
+.liveview__info fieldset {
+  text-align: center;
+  vertical-align: center;
+  position: relative;
+  height: 72px;
+  width: 162px;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 37.02px;
+  text-transform: uppercase;
+}
+.liveview__info legend {
+  position: absolute;
+  width: 100px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 44%);
+  background: #f2f2f2;
+  color: #444444;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+.liveview__info span {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+}
+.liveview__info__1__span {
+  margin-top: 60px;
+  color: #111111;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+.liveview__info__2 {
+  margin-left: 40px;
+}
+.liveview__info__2 legend {
+  width: 123px;
+}
