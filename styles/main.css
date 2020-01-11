@@ -300,3 +300,39 @@ p {
 .liveview__info__2 legend {
   width: 123px;
 }
+.footer__google-map {
+  display: flex;
+  align-items: center;
+  height: 400px;
+  background: url(../images/map.jpg);
+}
+.footer img {
+  height: 113px;
+  width: 106px;
+}
+.footer__info {
+  height: 150px;
+  background: #f2f2f2;
+}
+.footer__contacts {
+  display: flex;
+  margin-left: 110px;
+  align-items: center;
+  background-color: white;
+  width: 570px;
+  height: 201px;
+  margin-right: 330px;
+}
+.footer__contacts h2 {
+  margin-left: 76px;
+  width: 154px;
+  margin-right: 95px;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.footer__contacts p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #444444;
+}
