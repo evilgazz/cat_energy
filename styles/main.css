@@ -306,13 +306,30 @@ p {
   height: 400px;
   background: url(../images/map.jpg);
 }
-.footer img {
+.footer__map-pin {
   height: 113px;
   width: 106px;
 }
 .footer__info {
+  display: flex;
+  align-items: center;
   height: 150px;
   background: #f2f2f2;
+}
+.footer__info__logo {
+  background: url(../images/footer-logo.png) no-repeat;
+  width: 128px;
+  height: 24px;
+  margin-left: 110px;
+}
+.footer__info__social {
+  margin: 0 auto;
+}
+.footer__info__social img {
+  padding-right: 15px;
+}
+.footer__info__html {
+  margin-right: 110px;
 }
 .footer__contacts {
   display: flex;
