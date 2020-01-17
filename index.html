@@ -11,24 +11,30 @@
 <body>
 
 	<section class="promo">
+
+		<nav class="promo__nav">
+			<div class="promo__logo"></div>
+			<ul class="promo__ul">
+				<li>Главная</li>
+				<li>Каталог продукции</li>
+				<li>Подбор программы</li>
+			</ul>
+		</nav>
+
 		<header class="header">
 			<div class="promo__left">
-				<img src="images/logo.png" alt="" class="logo">
 				<div class="promo__left__info">
 					<h1>Функциональное<br> питание для котов</h1>
 					<h2>Занялся собой? Займись котом!</h2>
 					<div class="promo__left__btn">Подобрать программу</div>
 				</div>
 			</div>
+
 			<div class="promo__right">
-				<ul class="promo__right__nav">
-					<li>Главная</li>
-					<li>Каталог продукции</li>
-					<li>Подбор программы</li>
-				</ul>
 				<img src="images/index-can.png" alt="Promo product">
 			</div>
 		</header>
+		
 	</section>
 
 	<section class="offers">
@@ -117,50 +123,56 @@
 					</fieldset>
 					<div class="liveview__info__1__span">15 000 руб.</div>
 				</div>
+
+				<!-- for @media (max-width: 768px) -->
+				<div class="liveview__info__1__span--mobile">Затраты на питание:
+					<div>15 000 руб.</div>
+				</div>
+				
+
 			</div>
 
-			<!-- <div class="liveview__info__text">
-					
-					<span>15 000 руб.</span>
-			</div> -->
+			
 		</div>
 
 		<div class="liveview__right">
-			<img src="images/before-desktop.png" alt="Cat before">
+			<!-- <img src="images/before-desktop.png" alt="Cat before">
+				IN CSS
+			 -->
 		</div>
 	</section>
 
-	<footer class="footer">
-		
-		<div class="footer__google-map">
-			
+	<footer>
+
+		<div class="footer">
+
 			<div class="footer__contacts">
-				<h2>приглашаем к сотрудничеству дилеров!</h2>
-				<p>ул. Большая<br>Конюшенная, д. 19/8<br><br>Санкт-Петербург</p>
+					<h2>приглашаем к сотрудничеству дилеров!</h2>
+					<p>ул. Большая<br>Конюшенная, д. 19/8<br><br>Санкт-Петербург</p>
+			</div>
+			
+			<div class="footer__google-map">
+					
 			</div>
 
-			<img class="footer__map-pin" src="images/map-pin.png" alt="Map pin">
-		
-		</div>
-
-		<div class="footer__info">
-			<div class="footer__info__logo"></div>
-
-			<div class="footer__info__social">
-				<img src="images/vk.png" alt="vk"  height="15">
-				<img src="images/insta.png" alt="instagram"  height="19">
-				<img src="images/fb.png" alt="facebook" height="21">
-			</div>
-
-			<div class="footer__info__html">
-				<img src="images/html_academy.png" alt="Logo">
-
-			</div>
+			
 
 		</div>
 
+			<div class="footer__info">
+				<div class="footer__info__logo"></div>
 
-		
+				<div class="footer__info__social">
+					<img src="images/vk.png" alt="vk"  height="15">
+					<img src="images/insta.png" alt="instagram"  height="19">
+					<img src="images/fb.png" alt="facebook" height="21">
+				</div>
+
+				<div class="footer__info__html">
+					<img src="images/html_academy.png" alt="Logo">
+
+				</div>
+			</div>
 	</footer>
 	
 	<script src="js/jquery-3.4.1.js"></script>

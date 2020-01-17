@@ -18,14 +18,41 @@ p {
 }
 
 .promo {
-  width: 1440px;
   margin: 0 auto;
-  padding-left: 110px;
-  padding-right: 110px;
+  width: 1300px;
+  position: relative;
+}
+.promo__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.promo__logo {
+  background: url(../images/logo.png);
+  width: 202px;
+  height: 59px;
+}
+.promo__ul {
+  display: flex;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: black;
+}
+.promo__ul li {
+  margin: 0 15px;
+}
+@media (max-width: 992px) {
+  .promo {
+    width: auto;
+  }
+  .promo .promo__right {
+    display: none;
+    width: 760px;
+  }
 }
 .promo__left {
-  flex-basis: 50%;
-  margin-left: 90px;
+  margin-right: 200px;
 }
 .promo__left img {
   margin-top: 54px;
@@ -66,33 +93,20 @@ p {
 }
 .promo__right {
   position: relative;
-  flex-basis: 57%;
-  background-color: #64a83b;
-  background: url(../images/bg-right.jpg);
+  background: url(../images/bg-right.jpg) no-repeat;
   height: 696px;
-}
-.promo__right__nav {
-  display: flex;
-  margin-top: 59px;
-  font-size: 20px;
-  font-weight: 400;
-  justify-content: center;
-  text-transform: uppercase;
-  color: white;
-}
-.promo__right__nav li {
-  margin-right: 30px;
+  width: 720px;
 }
 .promo__right img {
   position: absolute;
   top: 150px;
-  right: 325px;
+  right: 300px;
 }
 
 .header {
   display: flex;
+  justify-content: center;
 }
-
 .offers {
   display: flex;
   justify-content: center;
@@ -100,11 +114,23 @@ p {
   margin-right: 100px;
   margin-top: 50px;
 }
+@media (max-width: 992px) {
+  .offers {
+    margin: 0;
+    flex-wrap: wrap;
+  }
+}
 .offers__left {
   width: 570px;
   height: 372px;
   background: #f2f2f2;
   margin-right: 80px;
+}
+@media (max-width: 992px) {
+  .offers__left {
+    margin-bottom: 50px;
+    margin-right: 0;
+  }
 }
 .offers__left__image {
   width: 96px;
@@ -183,9 +209,12 @@ p {
 }
 
 .how-to-work {
-  width: 1220px;
-  margin: 0 auto;
   margin-top: 80px;
+}
+@media (min-width: 992px) {
+  .how-to-work {
+    padding: 0 7%;
+  }
 }
 .how-to-work h1 {
   font-size: 60px;
@@ -193,11 +222,23 @@ p {
   line-height: 60px;
   color: #111111;
 }
+@media (max-width: 992px) {
+  .how-to-work h1 {
+    margin-left: 10vw;
+  }
+}
 
 .roadmap {
-  margin-top: 63px;
   display: flex;
+  margin-top: 63px;
   justify-content: space-between;
+}
+@media (max-width: 992px) {
+  .roadmap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 .roadmap p {
   color: #444444;
@@ -219,6 +260,15 @@ p {
   width: 236px;
   height: 228px;
 }
+@media (max-width: 992px) {
+  .roadmap__section:nth-child(odd) {
+    margin-right: 20vw;
+    justify-content: space-around;
+  }
+  .roadmap__section:nth-child(1n) {
+    margin-bottom: 10vw;
+  }
+}
 .roadmap__section h1 {
   position: absolute;
   color: #f2f2f2;
@@ -232,11 +282,24 @@ p {
   display: flex;
   justify-content: center;
   margin-top: 40px;
-  padding-bottom: 70px;
   background-image: linear-gradient(180deg, white 170px, #f2f2f2 20%);
 }
-.liveview__left {
-  margin-right: 120px;
+@media (max-width: 992px) {
+  .liveview {
+    flex-direction: column;
+  }
+}
+@media (min-width: 992px) {
+  .liveview {
+    padding: 0 50px;
+    padding-bottom: 70px;
+  }
+}
+@media (max-width: 992px) {
+  .liveview__left {
+    flex-wrap: wrap;
+    margin: 0 50px;
+  }
 }
 .liveview__left h1 {
   color: #111111;
@@ -246,18 +309,34 @@ p {
   margin-top: 30px;
   margin-bottom: 160px;
 }
+@media (max-width: 992px) {
+  .liveview__left h1 {
+    padding: 0 calc(50% - 500px);
+    margin-bottom: 60px;
+  }
+}
 .liveview__left p {
   width: 430px;
   color: #444444;
   font-size: 16px;
-  font-weight: 0;
   line-height: 24px;
+}
+@media (max-width: 992px) {
+  .liveview__left p {
+    width: 100%;
+  }
 }
 .liveview__info {
   display: flex;
   margin-top: 70px;
 }
+@media (max-width: 992px) {
+  .liveview__info {
+    margin-bottom: 100px;
+  }
+}
 .liveview__info fieldset {
+  border-radius: 6px;
   text-align: center;
   vertical-align: center;
   position: relative;
@@ -274,9 +353,10 @@ p {
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 44%);
+  padding: 0 3px;
   background: #f2f2f2;
   color: #444444;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   text-transform: lowercase;
 }
@@ -284,6 +364,9 @@ p {
   display: flex;
   justify-content: center;
   margin-top: 14px;
+}
+.liveview__info__1 {
+  margin-right: 40px;
 }
 .liveview__info__1__span {
   margin-top: 60px;
@@ -294,21 +377,58 @@ p {
   line-height: 20px;
   text-transform: uppercase;
 }
-.liveview__info__2 {
-  margin-left: 40px;
+@media (max-width: 996px) {
+  .liveview__info__1__span {
+    display: none;
+  }
 }
-.liveview__info__2 legend {
-  width: 123px;
+.liveview__info__1__span--mobile {
+  display: none;
+}
+@media (max-width: 996px) {
+  .liveview__info__1__span--mobile {
+    display: none;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #111111;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: uppercase;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+}
+.liveview__right {
+  height: 499px;
+  width: 677px;
+  background: url(../images/before-desktop.png);
+}
+@media (max-width: 992px) {
+  .liveview__right {
+    display: flex;
+    align-self: center;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer {
+    display: flex;
+    position: relative;
+  }
 }
 .footer__google-map {
   display: flex;
+  justify-content: center;
   align-items: center;
   height: 400px;
+  width: 100%;
   background: url(../images/map.jpg);
 }
 .footer__map-pin {
   height: 113px;
-  width: 106px;
 }
 .footer__info {
   display: flex;
@@ -333,15 +453,26 @@ p {
 }
 .footer__contacts {
   display: flex;
-  margin-left: 110px;
   align-items: center;
+  justify-content: space-between;
   background-color: white;
-  width: 570px;
   height: 201px;
-  margin-right: 330px;
+}
+@media (max-width: 992px) {
+  .footer__contacts {
+    margin: 0 72px;
+  }
+}
+@media (min-width: 992px) {
+  .footer__contacts {
+    padding: 0 100px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 370px;
+  }
 }
 .footer__contacts h2 {
-  margin-left: 76px;
   width: 154px;
   margin-right: 95px;
   font-size: 20px;

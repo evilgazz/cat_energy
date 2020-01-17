@@ -13,14 +13,47 @@ ul, li
 p 
 	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif
 
+
+
 .promo
-	width: 1440px
+	//display: flex
 	margin: 0 auto
-	padding-left: 110px
-	padding-right: 110px
+	width: 1300px
+	position: relative
+
+	
+	&__nav
+		display: flex
+		align-items: center
+		justify-content: space-between
+		//margin-top: 80px
+
+	
+	&__logo
+		background: url(../images/logo.png)
+		width: 202px
+		height: 59px
+	&__ul
+		display: flex
+		font-size: 20px
+		font-weight: 400
+		text-transform: uppercase
+		color: black
+		& li
+			margin: 0 15px
+
+
+	@media (max-width: 992px)
+		width: auto
+		.promo__right
+			display: none
+			width: 760px
+
+
+
 	&__left
-		flex-basis: 50%
-		margin-left: 90px
+		margin-right: 200px
+		//margin-left: 90px
 		& img
 			margin-top: 54px
 		&__btn
@@ -56,27 +89,26 @@ p
 				text-transform: uppercase
 
 	&__right
+
 		position: relative
-		flex-basis: 57%
-		background-color: #64a83b
-		background: url(../images/bg-right.jpg)
+		//background-color: #64a83b
+		background: url(../images/bg-right.jpg) no-repeat
+		//background-position: right
 		height: 696px
-		&__nav
-			display: flex
-			margin-top: 59px
-			font-size: 20px
-			font-weight: 400
-			justify-content: center
-			text-transform: uppercase
-			color: white
-			& li
-				margin-right: 30px
+		width: 720px
+
+
 		& img
 			position: absolute
 			top: 150px
-			right:325px
+			right:300px
+
+
 .header
 	display: flex
+	justify-content: center
+
+	@media (max-width: 992px)
 
 
 =circle-green
@@ -92,11 +124,20 @@ p
 	margin-left: 100px
 	margin-right: 100px
 	margin-top: 50px
+	@media (max-width: 992px)
+		margin: 0
+		flex-wrap: wrap
+		
+		
+
 	&__left
 		width: 570px
 		height: 372px
 		background: #f2f2f2
 		margin-right: 80px
+		@media (max-width: 992px)
+			margin-bottom: 50px
+			margin-right: 0
 		
 		&__image
 			+circle-green
@@ -162,19 +203,31 @@ p
 		text-transform: uppercase
 
 .how-to-work
-	width: 1220px
-	margin: 0 auto
 	margin-top: 80px
-	& h1
+	@media (min-width: 992px)
+
+			padding: 0 7%
+	h1
 		font-size: 60px
 		font-weight: 400
 		line-height: 60px
 		color: #111111
 
+		@media (max-width: 992px)
+			margin-left: 10vw
+			
 .roadmap
-	margin-top: 63px
 	display: flex
+	margin-top: 63px
 	justify-content: space-between
+	//flex-wrap: wrap
+
+
+
+	@media (max-width: 992px)
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
 	p
 		color: #444444
 		font-size: 16px
@@ -195,26 +248,46 @@ p
 		position: relative
 		width: 236px
 		height: 228px
-		& h1
+		//flex-basis: 20%
+		//&:nth-child(-n+3)
+			//margin-right: 50px
+
+		@media (max-width: 992px)
+			&:nth-child(odd)
+				margin-right: 20vw
+				justify-content: space-around
+			&:nth-child(1n)
+				margin-bottom: 10vw
+		h1
 			position: absolute
 			color: #f2f2f2
 			font-size: 281px
 			font-weight: 400
 			margin-left: 126px
 			z-index: -1
-			//line-height: 281.07px
 
 
 .liveview
 	display: flex
 	justify-content: center
 	margin-top: 40px
-	padding-bottom: 70px
 	background-image: linear-gradient(180deg, white 170px, #f2f2f2 20%)
 	
+	@media (max-width: 992px)
+		flex-direction: column
+
+	@media (min-width: 992px)
+		padding: 0 50px
+		padding-bottom: 70px
+		ml100px
+
 	// .liveview__left
 	&__left
-		margin-right: 120px
+		//margin-right: 120px
+		
+		@media (max-width: 992px)
+			flex-wrap: wrap
+			margin: 0 50px
 		h1
 			color: #111111
 			font-size: 60px
@@ -222,19 +295,30 @@ p
 			line-height: 60px
 			margin-top: 30px
 			margin-bottom: 160px
+
+			@media (max-width: 992px)
+				padding: 0 calc(50% - 500px)
+				margin-bottom: 60px
+			
+
 		p
 			width: 430px	
 			color: #444444
 			font-size: 16px
-			font-weight: 00
 			line-height: 24px
+
+			@media (max-width: 992px)
+				width: 100%
 
 	// .liveview__info
 	&__info
 		display: flex
 		margin-top: 70px
+		@media (max-width: 992px)
+			margin-bottom: 100px
 
 		fieldset
+			border-radius: 6px
 			text-align: center
 			vertical-align: center
 			position: relative
@@ -250,10 +334,10 @@ p
 			bottom: 0
 			left: 50%
 			transform: translate(-50%,44%)
-			//padding: 0 3px
+			padding: 0 3px
 			background: #f2f2f2
 			color: #444444
-			font-size: 16px
+			font-size: 14px
 			font-weight: 400
 			text-transform: lowercase
 		span
@@ -264,6 +348,7 @@ p
 			
 	// .liveview__info__1
 	&__info__1
+		margin-right: 40px
 		&__span
 			margin-top: 60px
 			color: #111111
@@ -272,31 +357,64 @@ p
 			font-weight: 400
 			line-height: 20px
 			text-transform: uppercase
-		
+
+			@media (max-width: 996px)
+				display: none
+
+
+			
+			&--mobile
+				display: none
+
+				@media (max-width: 996px)
+					display: none
+					margin-left: auto
+					display: flex
+					flex-direction: column
+					justify-content: center
+					color: #111111
+					font-size: 19px
+					font-weight: 400
+					line-height: 20px
+					text-transform: uppercase
+					text-align: right
+					margin-bottom: 10px
 
 	// .liveview__info__2
 	&__info__2
-		margin-left: 40px
+		//margin-left: 40px
 		legend
-			width: 123px
+			//width: 123px
 
 
 	// .liveview__right
 	&__right
+		height: 499px
+		width: 677px
+		background: url(../images/before-desktop.png)
+
+		@media (max-width: 992px)
+			display: flex
+			align-self: center
 
 
 .footer
 
+	@media (min-width: 992px)
+		display: flex
+		position: relative
+
 	&__google-map
 		display: flex
-		//justify-content: center
+		justify-content: center
 		align-items: center
 		height: 400px
+		width: 100%
 		background: url(../images/map.jpg)
-
+		
 	&__map-pin
 		height: 113px
-		width: 106px
+		//width: 106px
 
 	&__info
 		display: flex
@@ -317,14 +435,21 @@ p
 
 	&__contacts
 		display: flex
-		margin-left: 110px
 		align-items: center
+		justify-content: space-between
 		background-color: white
-		width: 570px
 		height: 201px
-		margin-right: 330px
+
+		@media (max-width: 992px)
+			margin: 0 72px
+
+		@media (min-width: 992px)
+			padding: 0 100px
+			position: absolute
+			top: 100px
+			left: 100px
+			width: 370px
 		h2
-			margin-left: 76px
 			width: 154px
 			margin-right: 95px
 			font-size: 20px
@@ -336,9 +461,60 @@ p
 			color: #444444
 	
 	
+section
+	//padding: 0 15px
+
+
+@media (min-width: 575.98px)
+	section 
+		//padding: 0 calc(50% - 270px)
+
+@media (min-width: 992px)
+	section 
+		//padding: 0 calc(50% - 360px)
+
+
+@media (min-width: 991.98px) 
+	section 
+		//padding: 0 calc(50% - 480px)
+  
+@media (min-width: 1199.98px)
+	section 
+		//padding: 0 calc(50% - 590px)
+  
 
 
 
+
+// Экстрамалые девайсы («телефоны», < 576px)
+@media (max-width: 575.98px)
+
+// Малые девайсы («ландшафтные», < 992px)
+@media (max-width: 992px)
+
+// Средние девайсы («таблетки», < 992px) 
+@media (max-width: 991.98px)
+
+// Большие девайсы (большие десктопы, < 1200px)
+@media (max-width: 1199.98px)
+
+
+
+
+// Экстрамалые девайсы («портретные телефоны», < 576px)
+@media (max-width: 575.98px)
+
+// Малые девайсы («ландшафтные», >= 575px)
+@media (min-width: 576px) and (max-width: 992px)
+
+// Средние девайсы («таблетки», >= 992px) 
+@media (min-width: 992px) and (max-width: 991.98px)
+
+// Большие девайсы (большие десктопы, >= 992px)
+@media (min-width: 992px) and (max-width: 1199.98px)
+
+// Большие девайсы (большие десктопы, >= 1200px)
+@media (min-width: 1200px)
 
 
 
