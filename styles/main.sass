@@ -1,3 +1,11 @@
+html 
+	box-sizing: border-box
+
+*, 
+*::after, 
+*::before 
+	box-sizing: inherit
+
 *
 	padding: 0
 	margin: 0
@@ -13,47 +21,106 @@ ul, li
 p 
 	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif
 
+.switcher
+	position: absolute
+	visibility: hidden
+	left: -99999px
 
+.open,
+.close
+	//display: none
+
+
+.switcher:checked ~ .olala
+	background: green
+	transition: linear 1s
+
+.header
+	display: flex
+	justify-content: flex-start
+	margin-left: 100px
+	@media (max-width: 768px)
+		flex-wrap: wrap
+		margin-left: 35px
+		margin-top: -50px
 
 .promo
 	//display: flex
-	margin: 0 auto
-	width: 1300px
-	position: relative
-
+	//margin: 0 auto
 	
+
+
+
+	position: relative
+	&::before
+		content: ""
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		background: url(../images/bg-right.jpg) no-repeat right
+		background-color: #64a83b
+		height: 696px
+		width: calc(100%/2)
+		z-index: -2
+		@media (max-width: 768px)
+			display: none
+
 	&__nav
+		width: 1200px
 		display: flex
 		align-items: center
 		justify-content: space-between
-		//margin-top: 80px
+		margin-left: auto
+		margin-right: auto
+		padding-top: 55px
+		ul
+			//background: black
+			@media (max-width: 320px)
+				//display: none
 
-	
+		@media (max-width: 768px)
+			width: 768px
+			padding-top: 24px
+			padding-left: 30px
+			padding-right: 30px
+			ul
+				color: black
+
+		
+
+
+
 	&__logo
 		background: url(../images/logo.png)
 		width: 202px
 		height: 59px
+		@media (max-width: 768px)
+			background: url(../images/logo-tablet.png)
+			width: 173px
+			height: 58px
+		@media (max-width: 320px)
+			background: url(../images/logo-mobile-header.png) no-repeat
+			width: 173px
+			height: 58px
+
+
 	&__ul
 		display: flex
 		font-size: 20px
 		font-weight: 400
 		text-transform: uppercase
-		color: black
+		color: white
+
+		@media (max-width: 768px)
+			font-size: 18px
+			//line-height: 24px
+
 		& li
 			margin: 0 15px
 
-
-	@media (max-width: 992px)
-		width: auto
-		.promo__right
-			display: none
-			width: 760px
-
-
-
 	&__left
-		margin-right: 200px
-		//margin-left: 90px
+
 		& img
 			margin-top: 54px
 		&__btn
@@ -88,27 +155,22 @@ p
 				line-height: 20px
 				text-transform: uppercase
 
+		@media (max-width: 768px)
+			height: 0
+
 	&__right
-
-		position: relative
-		//background-color: #64a83b
-		background: url(../images/bg-right.jpg) no-repeat
-		//background-position: right
-		height: 696px
-		width: 720px
+		&__img
+			//position: absolute
+			margin-top: 30px
+			margin-left: -40px
 
 
-		& img
-			position: absolute
-			top: 150px
-			right:300px
+		@media (max-width: 768px)
+			margin-top: 320px
+			//margin-left: 50px
+			z-index: -1
+				
 
-
-.header
-	display: flex
-	justify-content: center
-
-	@media (max-width: 992px)
 
 
 =circle-green
@@ -118,43 +180,100 @@ p
 	border-radius: 50%
 	background-color: #68b738
 
+=circle-green--table
+	width: 200px
+	height: 200px
+	//border: 3px solid #68b738
+	border-radius: 50%
+	background-color: #68b738
+
 .offers
 	display: flex
 	justify-content: center
 	margin-left: 100px
 	margin-right: 100px
-	margin-top: 50px
-	@media (max-width: 992px)
+	margin-top: 60px
+
+	&__button
+		font-size: 20px
+		font-weight: 400
+		line-height: 20px
+		margin-top: 30px
+		padding-left: 50px
+		text-transform: uppercase
+
+		@media (max-width: 768px)
+			padding: 0
+
+
+	@media (max-width: 768px)
 		margin: 0
 		flex-wrap: wrap
-		
-		
 
+		
 	&__left
 		width: 570px
 		height: 372px
 		background: #f2f2f2
 		margin-right: 80px
-		@media (max-width: 992px)
-			margin-bottom: 50px
-			margin-right: 0
+		&--table
+			display: none
+
+		@media (max-width: 768px)
+			display: none
+			&--table
+				display: flex
+				width: 708px
+				height: 372px
+				background: #f2f2f2
+				margin-bottom: 30px
+				&__text
+					display: flex
+					flex-direction: column
+					justify-content: center
+					padding-left: 50px
+					h1
+						font-size: 36px
+						font-weight: 400
+						text-transform: uppercase
+					p
+						//margin-left: 50px
+						margin-right: 50px
+						margin-top: 25px
+						color: #444444
+						font-size: 16px
+						font-weight: 400
+						line-height: 24px
+				img
+					position: absolute
+					left: 30px
+					bottom: 20px
+
 		
 		&__image
 			+circle-green
 			position: relative
 			margin-left: 50px
 			margin-top: 50px
-		& img
+			&--table
+				align-self: center
+				+circle-green--table
+				position: relative
+				margin-right: 60px
+				flex-shrink: 0
+
+
+		img
 			position: absolute
 			left: 12px
 			bottom: 5px
-		& h1
+		h1
 			margin-left: 160px
 			margin-top: 15px
 			font-size: 36px
 			font-weight: 400
 			text-transform: uppercase
-		& p
+		p
 			margin-left: 50px
 			margin-right: 50px
 			margin-top: 40px
@@ -168,24 +287,62 @@ p
 		width: 570px
 		height: 372px
 		background: #f2f2f2
+		&--table
+			display: none
+
+		@media (max-width: 768px)
+			display: none
+			&--table
+				display: flex
+				width: 708px
+				height: 372px
+				background: #f2f2f2
+				&__text
+					display: flex
+					flex-direction: column
+					justify-content: center
+					padding-left: 50px
+					h1
+						font-size: 36px
+						font-weight: 400
+						text-transform: uppercase
+					p
+						//margin-left: 50px
+						margin-right: 50px
+						margin-top: 25px
+						color: #444444
+						font-size: 16px
+						font-weight: 400
+						line-height: 24px
+				img
+					position: absolute
+					left: -35px
+					top: 40px
 		
 		&__image
 			+circle-green
 			position: relative
 			margin-left: 50px
 			margin-top: 50px
-		& img
+			&--table
+				align-self: center
+				+circle-green--table
+				position: relative
+				margin-right: 60px
+				flex-shrink: 0
+
+		img
 			position: absolute
 			left: -20px
 			bottom: 20px
-		& h1
+		h1
 			margin-left: 160px
 			margin-top: 15px
 			font-size: 36px
 			font-weight: 400
 			text-transform: uppercase
 
-		& p
+		p
 			margin-left: 50px
 			margin-right: 50px
 			margin-top: 40px
@@ -194,18 +351,12 @@ p
 			font-weight: 400
 			line-height: 24px
 
-	&__button
-		font-size: 20px
-		font-weight: 400
-		line-height: 20px
-		margin-top: 30px
-		padding-left: 50px
-		text-transform: uppercase
+
 
 .how-to-work
 	margin-top: 80px
-	@media (min-width: 992px)
 
+	@media (min-width: 992px)
 			padding: 0 7%
 	h1
 		font-size: 60px
@@ -270,20 +421,17 @@ p
 .liveview
 	display: flex
 	justify-content: center
-	margin-top: 40px
-	background-image: linear-gradient(180deg, white 170px, #f2f2f2 20%)
-	
+	margin-top: 60px
+	background-image: linear-gradient(180deg, white 170px, #f2f2f2 30%)
+	padding-bottom: 70px
+
 	@media (max-width: 992px)
 		flex-direction: column
 
-	@media (min-width: 992px)
-		padding: 0 50px
-		padding-bottom: 70px
-		ml100px
 
 	// .liveview__left
 	&__left
-		//margin-right: 120px
+		margin-right: 130px
 		
 		@media (max-width: 992px)
 			flex-wrap: wrap
@@ -294,13 +442,12 @@ p
 			font-weight: 400
 			line-height: 60px
 			margin-top: 30px
-			margin-bottom: 160px
+			margin-bottom: 145px
 
 			@media (max-width: 992px)
 				padding: 0 calc(50% - 500px)
 				margin-bottom: 60px
 			
-
 		p
 			width: 430px	
 			color: #444444
@@ -334,7 +481,7 @@ p
 			bottom: 0
 			left: 50%
 			transform: translate(-50%,44%)
-			padding: 0 3px
+			//padding: 0 3px
 			background: #f2f2f2
 			color: #444444
 			font-size: 14px
@@ -439,16 +586,17 @@ p
 		justify-content: space-between
 		background-color: white
 		height: 201px
+		width: 570px
 
 		@media (max-width: 992px)
 			margin: 0 72px
 
 		@media (min-width: 992px)
-			padding: 0 100px
+			padding: 0 70px
 			position: absolute
 			top: 100px
 			left: 100px
-			width: 370px
+			width: 570px
 		h2
 			width: 154px
 			margin-right: 95px
